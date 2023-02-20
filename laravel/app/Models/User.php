@@ -27,6 +27,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'telegram_user_id',
     ];
 
     /**
@@ -58,4 +59,8 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+    public function routeNotificationForTelegram()
+    {
+        return $this->telegram_user_id;
+    }
 }
